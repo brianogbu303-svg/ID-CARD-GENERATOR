@@ -46,11 +46,11 @@ const Id = () => {
 
 
   return (
-    <div className="p-12 grid w-2xl ml-4 max-[400px]:items-center max-[400px]:p-1.5  max-[400px]:overflow-hidden items-center">
+    <div className="p-12 grid w-2xl ml-4 max-[250px]:items-center max-[250px]:p-1  max-[250px]:overflow-hidden items-center">
 
       <div
         ref={cardRef}
-        className="border bg-[url('../assets/ID_Background.jpg')] max-[400px]:scale-[0.9] bg-cover bg-no-repeat relative rounded-lg p-6 pb-20 mt-4 h w-full  text-center shadow-md bg-white"
+        className="border bg-[url('../assets/ID_Background.jpg')] max-[250px]:scale-[0.6] bg-cover bg-no-repeat relative rounded-lg p-6 pb-20 mt-4 h w-full  text-center shadow-md bg-white"
       >
         
         <div className="relative font-mono">
@@ -106,7 +106,7 @@ const Id = () => {
 
       <button
         onClick={handleDownload}
-        className="bg-green-500 max-[400px]:scale-[0.9] max-[400px]:mt-0 text-white p-2 rounded mt-4 hover:bg-green-600"
+        className="bg-green-500 max-[250px]:scale-[0.6] max-[250px]:mt-0 text-white p-2 rounded mt-4 hover:bg-green-600"
         >
         Download ID
       </button>
