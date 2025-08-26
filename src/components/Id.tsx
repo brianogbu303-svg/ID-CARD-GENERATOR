@@ -50,7 +50,7 @@ const Id = () => {
 
       <div
         ref={cardRef}
-        className="border bg-[url('../assets/ID_Background.jpg')] bg-cover bg-no-repeat relative rounded-lg p-6 pb-20 mt-4 h w-full  text-center shadow-md bg-white"
+        className="border bg-[url('../assets/ID_Background.jpg')] max-[400px]:scale-[0.5] bg-cover bg-no-repeat relative rounded-lg p-6 pb-20 mt-4 h w-full  text-center shadow-md bg-white"
       >
         
         <div className="relative font-mono">
