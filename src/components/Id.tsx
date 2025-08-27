@@ -34,7 +34,7 @@ const Id = () => {
       const dataUrl = await htmlToImage.toPng(cardRef.current);
       const link = document.createElement("a");
       link.href = dataUrl;
-      link.download = `${state.surname}-id-card.png`;
+      link.download = `${state.surname}-id-card.mp4`;
       link.click();
     } catch (err) {
       console.error("Download failed:", err);
