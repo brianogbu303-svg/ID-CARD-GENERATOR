@@ -18,6 +18,7 @@ interface FormData {
 
 const Id = () => {
   const { id } = useParams<{ id: string }>();
+  console.log(id)
   const cardRef = useRef<HTMLDivElement>(null);
   
   const data = id ? localStorage.getItem(`idcard-${id}`) : null;

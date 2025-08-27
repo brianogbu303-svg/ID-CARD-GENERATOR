@@ -84,7 +84,7 @@ const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
 
     localStorage.setItem(`idcard-${id}`, JSON.stringify(IdData));
 
-    navigate(`./Id/${id}`);
+    navigate(`../Id/${id}`);
   };
 
   const generateNIN = () => {
