@@ -122,7 +122,7 @@ const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
           name="othernames"
           value={form.othernames}
           onChange={handleChange}
-          placeholder="Enter your other names"
+          placeholder="Enter your other name(s)"
           className="border p-2 rounded"
           required
         />
