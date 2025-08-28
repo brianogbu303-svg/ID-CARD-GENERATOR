@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <Form/>
   },
   {
-    path: "/Id/:id",
+    path: `/Id/:id`,
     element: <Id/>
   }
 ])
