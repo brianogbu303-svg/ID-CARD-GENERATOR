@@ -1,9 +1,10 @@
 import './App.css'
-import { createBrowserRouter} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Form from './components/Form'
 import Id from './components/Id'
 import Home from './components/Home'
 
+function App () {
 
 const router = createBrowserRouter([
   {
@@ -20,4 +21,10 @@ const router = createBrowserRouter([
   }
 ])
 
-export {router}
+return (
+  <RouterProvider router={router}/>
+)
+
+}
+
+export default App;
