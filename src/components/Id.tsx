@@ -1,4 +1,4 @@
-import { useLocation, useParams} from "react-router-dom";
+import { useLocation} from "react-router-dom";
 import { QRCodeCanvas } from "qrcode.react";
 import { useRef} from "react";
 import * as htmlToImage from "html-to-image";
