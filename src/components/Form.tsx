@@ -1,7 +1,6 @@
 
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { v4 as uuidv4 } from "uuid";
 
 
 interface FormData {
@@ -29,8 +28,6 @@ const Form:React.FC = () => {
     nin: "",
   });
 
-  
-  
   const IssueDate = () =>{
     const today = new Date()
     const todayAsString:string = today.toDateString().toUpperCase()
@@ -79,12 +76,15 @@ const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const id = uuidv4();
-    const IdData: FormData = { id, ...form };
 
-    localStorage.setItem(`idcard-${id}`, JSON.stringify(IdData));
 
-    navigate(`../Id/${id}`);
+    navigate(`../Id#surname=${encodeURIComponent(form.surname)}&othernames=${encodeURIComponent(
+      form.othernames
+    )}&date=${encodeURIComponent(form.date)}&gender=${encodeURIComponent(
+      form.gender
+    )}&issueDate=${encodeURIComponent(
+      form.issueDate
+    )}&nin=${encodeURIComponent(form.nin)}`);
   };
 
   const generateNIN = () => {

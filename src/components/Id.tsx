@@ -1,31 +1,42 @@
-import { useParams} from "react-router-dom";
+import { useLocation, useParams} from "react-router-dom";
 import { QRCodeCanvas } from "qrcode.react";
 import { useRef} from "react";
 import * as htmlToImage from "html-to-image";
 import '../css/Form.css'
 
 interface FormData {
-  id:string
   surname: string,
   othernames: string, 
   date: string, 
   gender: string, 
-  image:string
+  /* image:string */
   issueDate: string
   nin: string
 }
 
 
 const Id = () => {
-  const { id } = useParams<{ id: string }>();
-  console.log(id)
   const cardRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
   
-  const data = id ? localStorage.getItem(`idcard-${id}`) : null;
-  const state: FormData = data ? JSON.parse(data) : null;
+  const URL = location.hash.startsWith("#")
+    ? location.hash.slice(1)
+    : location.hash;
+
+  const params = new URLSearchParams(URL);
+
+  const state: FormData = {
+    surname: params.get("surname") || "",
+    othernames: params.get("othernames") || "",
+    date: params.get("date") || "",
+    gender: params.get("gender") || "",
+    /* image: params.get("image") || "", */
+    issueDate: params.get("issueDate") || "",
+    nin: params.get("nin") || "",
+  };
+
   
-  
-  const pageUrl = `${window.location.origin}/Id/${state.id}`;
+   const pageUrl = `${window.location.origin}/Id#${URL}`;
   
   
   const handleDownload = async () => {
@@ -63,7 +74,7 @@ const Id = () => {
         
         
         <div className="mt-2.5">
-        <div className="float-left">
+      {/*   <div className="float-left">
         {state.image && (
           <img
           src={state.image}
@@ -71,7 +82,7 @@ const Id = () => {
           className="w-28 h-36 mx-auto object-cover"
           />
         )}
-        </div>
+        </div> */}
 
         <div className="float-left  w-3xs mt-3 text-gray-300 text-left ml-5">
 
